@@ -1,0 +1,10 @@
+.portfolio{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.title{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
