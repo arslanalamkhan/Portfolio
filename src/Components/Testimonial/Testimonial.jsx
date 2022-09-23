@@ -1,63 +1,65 @@
 import React from "react";
 import "./Testimonial.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Profile from "../../img/profile.png";
 import "swiper/css";
-import "swiper/css/pagination";
+
 import { Pagination } from "swiper";
+import "swiper/css/pagination";
+import profilePic1 from "../../img/profile.png";
+import profilePic2 from "../../img/profile.png";
+import profilePic3 from "../../img/profile.png";
+import profilePic4 from "../../img/profile.png";
 
 const Testimonial = () => {
   const clients = [
     {
-      img: Profile,
+      img: profilePic1,
       review:
-        "Dolor sit amet consectetur adipiscing. Nisl suscipit adipiscing bibendum est ultricies. Consequat nisl vel pretium lectus quam id. Ultrices dui sapien eget mi. In hac habitasse platea dictumst. Turpis egestas integer eget aliquet nibh praesent tristique. Feugiat in fermentum posuere urna nec tincidunt. Curabitur gravida arcu ac tortor dignissim convallis aenean et. Duis ut diam quam nulla porttitor massa id. Commodo ullamcorper a lacus vestibulum sed arcu.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
-      img: Profile,
+      img: profilePic2,
       review:
-        "Dolor sit amet consectetur adipiscing. Nisl suscipit adipiscing bibendum est ultricies. Consequat nisl vel pretium lectus quam id. Ultrices dui sapien eget mi. In hac habitasse platea dictumst. Turpis egestas integer eget aliquet nibh praesent tristique. Feugiat in fermentum posuere urna nec tincidunt. Curabitur gravida arcu ac tortor dignissim convallis aenean et. Duis ut diam quam nulla porttitor massa id. Commodo ullamcorper a lacus vestibulum sed arcu.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
-      img: Profile,
+      img: profilePic3,
       review:
-        "Dolor sit amet consectetur adipiscing. Nisl suscipit adipiscing bibendum est ultricies. Consequat nisl vel pretium lectus quam id. Ultrices dui sapien eget mi. In hac habitasse platea dictumst. Turpis egestas integer eget aliquet nibh praesent tristique. Feugiat in fermentum posuere urna nec tincidunt. Curabitur gravida arcu ac tortor dignissim convallis aenean et. Duis ut diam quam nulla porttitor massa id. Commodo ullamcorper a lacus vestibulum sed arcu.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
     {
-      img: Profile,
+      img: profilePic4,
       review:
-        "Dolor sit amet consectetur adipiscing. Nisl suscipit adipiscing bibendum est ultricies. Consequat nisl vel pretium lectus quam id. Ultrices dui sapien eget mi. In hac habitasse platea dictumst. Turpis egestas integer eget aliquet nibh praesent tristique. Feugiat in fermentum posuere urna nec tincidunt. Curabitur gravida arcu ac tortor dignissim convallis aenean et. Duis ut diam quam nulla porttitor massa id. Commodo ullamcorper a lacus vestibulum sed arcu.",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
     },
   ];
 
   return (
-    <div className="t-wrapper">
+    <div className="t-wrapper" id="Testimonial">
       <div className="t-heading">
-        <span>Client always get</span>
-        <span>Exceptional Work</span>
+        <span>Clients always get </span>
+        <span>Exceptional Work </span>
         <span>from me...</span>
         <div
-          className="blue t-blur1"
+          className="blur t-blur1"
           style={{ background: "var(--purple)" }}
         ></div>
-        <div className="blue t-blur2" style={{ background: "skyblue" }}></div>
+        <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
       </div>
-
       <Swiper
-        slidesPerView={1}
-        pagination={{
-          clickable: true,
-        }}
+        // install Swiper modules
         modules={[Pagination]}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
       >
         {clients.map((client, index) => {
           return (
-            <div className="secSwiper">
-              <SwiperSlide key={index}>
+            <SwiperSlide key={index}>
+              <div className="testimonial">
                 <img src={client.img} alt="" />
                 <span>{client.review}</span>
-              </SwiperSlide>
-            </div>
+              </div>
+            </SwiperSlide>
           );
         })}
       </Swiper>

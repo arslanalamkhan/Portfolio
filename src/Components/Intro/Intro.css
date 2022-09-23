@@ -98,3 +98,18 @@
   left: -12rem;
   top: 15rem;
 }
+
+@media screen and (max-width: 480px) {
+  .intro {
+    flex-direction: column;
+  }
+  .i-right {
+    transform: scale(0.8);
+    left: -3rem;
+  }
+  .i-right .blur {
+    display: none;
+  }
+  .floating-div:nth-of-type(2) {
+  }
+}

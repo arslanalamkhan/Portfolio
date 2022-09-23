@@ -10,11 +10,27 @@ import thumbup from "../../img/thumbup.png";
 import Crown from "../../img/crown.png";
 import glassesimoji from "../../img/glassesimoji.png";
 import FloatingDiv from "../FloatingDiv/FloatingDiv";
+import Popup from "../Popup/Popup";
+// import { motion } from "framer-motion";
 
 const Intro = () => {
+  const transition = { duration: 2, type: "spring" };
+  // Start Dialog
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickToOpen = () => {
+    setOpen(true);
+  };
+
+  const handleToClose = () => {
+    setOpen(false);
+  };
+
+  // Close Dialouge
   return (
     <div className="intro">
       {/* Left Side */}
+
       <div className="i-left">
         <div className="i-name">
           <span>Hy! I Am</span>
@@ -42,11 +58,17 @@ const Intro = () => {
         <img src={Vector1} alt="" />
         <img src={Vector2} alt="" />
         <img src={boy} alt="" />
-        <img src={glassesimoji} alt="" />
-        <div style={{ top: "-2%", left: "52%" }}>
+        <img
+          // initial={{ left: "-36%" }}
+          // whileInView={{ left: "-24%" }}
+          // transition={transition}
+          src={glassesimoji}
+          alt=""
+        />
+        <div style={{ top: "-2%", left: "52%" }} className="floating-div">
           <FloatingDiv image={Crown} txt1="Full Stack" txt2="Developer" />
         </div>
-        <div style={{ top: "18rem", left: "0rem" }}>
+        <div style={{ top: "18rem", left: "0rem" }} className="floating-div">
           <FloatingDiv image={thumbup} txt1="Best Design" txt2="Award" />
         </div>
         {/* Blur Divs */}

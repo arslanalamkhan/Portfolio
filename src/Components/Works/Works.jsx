@@ -8,7 +8,7 @@ import Amazon from "../../img/amazon.png";
 
 const Works = () => {
   return (
-    <div className="works">
+    <div className="works" id="Works">
       {/* Left Side */}
       <div className="awesome">
         <span>Works for All these</span>
